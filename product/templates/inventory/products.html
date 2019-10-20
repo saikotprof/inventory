@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<div class="container">
+<div class="add_buttons">
+
+    <div class="button-group">
+      <a href="{% url 'home' %}" class="btn btn-info btn-md btn-trim" role="button"> Home</a>
+      <a href="{% url 'product-details' %}" class="btn btn-warning btn-md btn-trim" role="button"> Products Page</a>
+      <a href="{% url 'apple' %}" class="btn btn-primary btn-md btn-trim" role="button"> Apple</a>
+      <a href="#" class="btn btn-warning btn-sm btn-pad" role="button"> +</a>
+
+      <a href="{% url 'samsung' %}" class="btn btn-primary btn-md btn-trim" role="button"> Samsung</a>
+      <a href="#" class="btn btn-warning btn-sm btn-pad" role="button"> +</a>
+
+      <a href="{% url 'xiaomi' %}" class="btn btn-primary btn-md btn-trim" role="button"> Xiaomi</a>
+      <a href="#" class="btn btn-warning btn-sm btn-pad" role="button"> +</a>
+
+    </div>
+
+  </div>
+  <br>
+  <div>
+    <h4>Currently Viewing {{ header }}</h4>
+  </div>
+<table class="table table-bordered">
+  <thead class="table-dark">
+    <tr class="text-center">
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Price</th>
+      <th scope="col">Status</th>
+      <th scope="col">Issues</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in items %}
+    <tr>
+      <th scope="row">{{ item.pk }}</th>
+      <td>{{ item.name }}</td>
+      <td>{{ item.brand }}</td>
+      <td>{{ item.price }}$</td>
+      <td>{{ item.status }}</td>
+      <td>{{ item.issues }}</td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
