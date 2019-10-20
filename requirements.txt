@@ -8,6 +8,7 @@ django-crispy-forms==1.8.0
 django-import-export==1.2.0
 et-xmlfile==1.0.1
 get==2019.4.13
+gunicorn
 idna==2.8
 jdcal==1.4.1
 odfpy==1.4.0
